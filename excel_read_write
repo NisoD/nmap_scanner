@@ -1,0 +1,12 @@
+import openpyxl
+
+def read_excel(file_path):
+    #EXCEL FILE LOAD
+    workbook = openpyxl.load_workbook(file_path)
+    #sheet load
+    sheet = workbook.active
+    
+    # Iterate over the rows and columns and print the data
+    for row in sheet.iter_rows(values_only=True):
+        print(row)
+
